@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  payroll-app:
+    build: .
+    container_name: dexlabs_payroll_automation
+    restart: always
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./sample_payroll.xlsx:/app/sample_payroll.xlsx
